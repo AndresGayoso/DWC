@@ -26,3 +26,4 @@ var nombre2 = 'andres';
 var nombre3 = `andres`;
 
 console.log("Mi nombre es " + nombre1);
+console.log("Mi nombre es",nombre1)
