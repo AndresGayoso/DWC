@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad1 js</title>
+</head>
+<body>
+    <p>Escribe un numero:
+        <input type="text" name="num1" id="num1"> 
+        <button type="button" onclick="MostrarTexto()">Enviar</button>
+    </p>
+    <script>
+        function MostrarTexto(){
+            let numero = document.getElementById("num1");
+            if(!isNaN(numero.value)){
+                document.write("Es un numero");
+            }else{
+                document.write("No es un numero");
+            }
+        }
+    </script>
+</body>
+</html>
