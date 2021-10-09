@@ -12,7 +12,7 @@ var confirmar;
 while(!acabar){
     
     //pedir numero
-    numero = prompt("Adivina el numero",randomNumber);
+    numero = prompt("Adivina el numero del 1 al 100");
     
     //Variable por si el usuario le da a cancelar que no siga el bucle
     if(numero != null){
