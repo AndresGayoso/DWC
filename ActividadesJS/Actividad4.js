@@ -24,7 +24,7 @@ while(!acabar){
     }
 
     if(isNaN(numero)){
-        alert("Eso no es un numero.");
+        alert("Eso no es un numero."); 
     }
 
 }
