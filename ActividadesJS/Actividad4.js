@@ -24,7 +24,14 @@ while(!acabar){
     }
 
     if(isNaN(numero)){
+<<<<<<< HEAD
         alert("Eso no es un numero."); 
     }
 
 }
+=======
+        alert("Eso no es un numero.");
+    }
+
+}
+>>>>>>> fbef8018b7d4be226688962dff339a8e72c76bc1
