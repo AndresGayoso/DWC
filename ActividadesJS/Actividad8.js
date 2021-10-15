@@ -1,46 +1,18 @@
 function CrearTabla(){
 
-    var hex = 0;
+     document.write('<table style="border: 2px solid black">');
 
-    var body = document.getElementsByTagName("body")[0];
-
-    var tabla = document.createElement("table");
-    var tbody = document.createElement("tbody");
-
-    for(var i = 0; i < 5;i++){
-        var fila = document.createElement("tr");
-
-        for(var j = 0; j < 1;j++){
-
-            var hexadecimal = hex.toString(16);
-            var decimal = "0x000" + hexadecimal;
-            var mostrar = String.fromCharCode(decimal);
-
-            var celda1 = document.createElement("td");
-            var txtcelda1 = document.createTextNode(j);
-            var celda2 = document.createElement("td");
-            var txtcelda2 = document.createTextNode(mostrar);
-            var celda3 = document.createElement("td");
-            var txtcelda3 = document.createTextNode(decimal);
-
-            celda1.appendChild(txtcelda1);
-            celda2.appendChild(txtcelda2);
-            celda3.appendChild(txtcelda3);
-
-            fila.appendChild(celda1);
-            fila.appendChild(celda2);
-            fila.appendChild(celda3);
-
-            hex ++;
+            
+        for(let i =0;i<1000;i++){
+            var simbolo = `&#`+i;
+            document.write('<tr>');
+          for(let j=0;j<1;j++){
+            document.write('<td style="border: 2px solid black">'+i+'</td>');
+            document.write('<td style="border: 2px solid black">'+simbolo+'</td>');
+        }
+            document.write('</tr>');
 
         }
-
-        tbody.appendChild(fila);
-
+    document.write('</table>');
     }
-
-    tabla.appendChild(tbody);
-    body.appendChild(tabla);
-    tabla.setAttribute("border","2");
-}
-window.onload = CrearTabla;
+    window.onload= CrearTabla();
