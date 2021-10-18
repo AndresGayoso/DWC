@@ -1,13 +1,10 @@
 function Cuadrados(){
-    var htmlElements = "";
 
-    for (let i = 0; i < 7;i++){
-        htmlElements += '<div id="box"></div>'
+    for(let i = 0; i < 2000; i++){
+
+        document.write(' <div  style="position:absolute;margin:0px;width:50px;height:50px;background:'+getRandomColor()+';top:'+getPositionTop()+'px;left:'+getPositionLeft()+'px"></div>');
+
     }
-    var container = document.getElementById("container");
-    container.innerHTML = htmlElements;
-    var box = document.getElementById("box");
-    box.style.backgroundColor = getRandomColor();
 
 }
 function getRandomColor() {
@@ -18,4 +15,22 @@ function getRandomColor() {
        }
    return color;
    }
+
+function getPositionTop(){
+   var top = 0;
+
+   top = parseInt(Math.floor(Math.random() * 870));
+
+   return top;
+
+}
+
+function getPositionLeft(){
+    var left = 0;
+
+    left = parseInt(Math.floor(Math.random() * 1800));
+
+    return left;
+
+}
 window.onload = Cuadrados();
