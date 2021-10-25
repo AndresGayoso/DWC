@@ -3,16 +3,7 @@ function Frecuencias(){
     //Declarar varibles
     var numero;
 
-    var uno = 0;
-    var dos = 0;
-    var tres = 0;
-    var cuatro = 0;
-    var cinco = 0;
-    var seis = 0;
-    var siete = 0;
-    var ocho = 0;
-    var nueve = 0;
-    var diez = 0;
+    var uno = 0,dos = 0,tres = 0,cuatro = 0,cinco = 0,seis = 0,siete = 0,ocho = 0,nueve = 0,diez = 0;
 
     for(let i = 0; i < 10000;i++){
 
