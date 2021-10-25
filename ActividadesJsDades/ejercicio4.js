@@ -14,10 +14,10 @@ function Frecuencias(){
     var nueve = 0;
     var diez = 0;
 
-    for(let i = 0; i < 10;i++){
+    for(let i = 0; i < 10000;i++){
 
         //Variable que nos saca un numero del 1 al 10
-        numero = Math.floor(Math.random() * 11);
+        numero = Math.floor(Math.random() * (11-1) + 1);
 
         //Condiciones que nos sumando la variable segun el numero que salga
         if (numero == 1){
