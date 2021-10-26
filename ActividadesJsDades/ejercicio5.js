@@ -27,13 +27,16 @@ function verificacion(){
     //Bucle para verificar la contraseña
     while(verificar == false){
 
+        //Escribimos la contraseña
         passwd = prompt("Escribe una contraseña");
         
+        //Cancela el programa
         if (passwd == null){
             document.write("Se ha acabado el programa");
             verificar = true;
         }       
 
+        //Verificar minusculas
         for(let i = 0; i < passwd.length;i++){
             if(minusculas.indexOf(passwd.charAt(i)) != -1 ){
                 comprobar++;
@@ -41,6 +44,7 @@ function verificacion(){
             } 
         }
 
+        //Verifica mayusculas
         for(let i = 0; i < passwd.length;i++){
             if(mayusculas.indexOf(passwd.charAt(i)) != -1 ){
                 comprobar++;
@@ -48,6 +52,7 @@ function verificacion(){
             } 
         }
 
+        //Verifica numeros
         for(let i = 0; i < passwd.length;i++){
             if(numeros.indexOf(passwd.charAt(i)) != -1 ){
                 comprobar++;
@@ -55,6 +60,7 @@ function verificacion(){
             } 
         }
 
+        //Verifica simbolos
         for(let i = 0; i < passwd.length;i++){
             if(simbolos.indexOf(passwd.charAt(i)) == -1 ){
                 comprobar ++;
@@ -62,6 +68,7 @@ function verificacion(){
             }            
         }
 
+        //Si todo esta correcto mostramos el texto y acaba el programa
         if(comprobar == 4){
             document.write("Usuario: ",usuario);
             document.write("<br>Contraseña: ",passwd);
