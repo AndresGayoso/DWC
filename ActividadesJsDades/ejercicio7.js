@@ -12,21 +12,8 @@ function Palindromo(){
     //Nos quita los acentos y dieresis
     var QuitarSignosP = minusculas.split('').map( letra => acentos[letra] || letra).join('').toString();
 
-    console.log(QuitarSignosP);
-
-    //Nos crea un array con un caracter en cada posicion
-    var cadenaConEspacios = QuitarSignosP.split("");
-
-    //Decalara variable
-    var cadenaSinEspacios = "";
-
-    //Bucle que quita los espacios a la cadena
-     for(i in cadenaConEspacios) {
-         //si no tiene espacio se guarda en la variable y al final saldra el texto sin espacios
-        if(cadenaConEspacios[i] != " ") {
-            cadenaSinEspacios += cadenaConEspacios[i];
-        }
-    }
+    //Nos quita los espacios
+    var cadenaSinEspacios = QuitarSignosP.replace(/ /g,'');
 
     //Conertimos el texto sin espacios en cadena(sirve para comparar caracteres uno a uno despues)
     var cadena = cadenaSinEspacios.split("");
