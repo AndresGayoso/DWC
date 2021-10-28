@@ -22,14 +22,12 @@ function MediaNumeros(){
         if(numero == null){
             document.write("El programa se ha acabado y no se mostrara la media");
             acabar = true;
-            break;
         }
 
         //Si escribe 0 se acaba el programa y hace la media
         if(numero == 0){
             document.write("La media es: ",numeros / contador);
             acabar = true;
-            break;
         }
 
         //Si es un numero los suma al total(sino no se almacena)
