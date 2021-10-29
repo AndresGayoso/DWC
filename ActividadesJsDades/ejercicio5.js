@@ -16,17 +16,22 @@ function verificacion(){
     var numeros = "0123456789";
     var simbolos = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789"
 
+    //Bucle para verificar la contraseña
     while(!verificar){
 
+        //Variable que nos sirve para comprobar si cumple los requisitos
         comprobar = 0;
 
+        //Introducimos el usuario
         var usuario = prompt("Escribe el nombre de usuario");
 
+        //Se cancela el programa
         if (usuario == null){
             document.write("Se ha acabado el programa");
             verificar = true;
         } 
 
+        //Bucle para comprobar que no hay mayusculas
         for(let i = 0; i < usuario.length;i++){
             if(mayusculas.indexOf(usuario.charAt(i)) != -1 ){
                 comprobar++;
@@ -34,6 +39,7 @@ function verificacion(){
             } 
         }
 
+        //Bucle para comprobar que no hay simbolos
         for(let i = 0; i < usuario.length;i++){
             if(simbolos.indexOf(usuario.charAt(i)) == -1 ){
                 comprobar ++;
@@ -41,6 +47,7 @@ function verificacion(){
             }            
         }
 
+        //Se acaba el bucle si se cumplen las condiciones
         if(comprobar == 0){
             verificar = true;
         }
@@ -53,6 +60,7 @@ function verificacion(){
     //Bucle para verificar la contraseña
     while(!verificar2){
 
+        //Variable que nos sirve para comprobar si cumple los requisitos
         comprobar = 0;
 
         //Escribimos la contraseña
