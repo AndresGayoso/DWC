@@ -1,30 +1,34 @@
 function ComprobarRepetidos(){
-
+    
     var acabar = false;
-    var palabras = [];
-    var contador = 0;
-    var repetido = 0;
-
+    const palabras = new Map();
+    var palabra;
+    var valor;
+    
     while(!acabar){
 
-        palabras[contador] = new Array(2); 
-        palabras[contador][0] = prompt("Escribe una palabra: ");
-        palabras[contador][1] = parseInt(repetido);
-        console.log(palabras[contador][1]);
-        if(palabras[contador][0] == null){
-            acabar = true;
+        palabra = prompt("Escribe una palabra: ");
+
+        palabras.set(palabra,1);
+
+        valor = palabras.get(palabra);
+
+        if(palabras.has(palabra) == true){
+            palabras.keySet(palabra);
         }
-        if(palabras[contador][0].trim() == ""){
+        
+        if(palabras.has(null) == true){
             acabar = true;
-            palabras.splice(contador,1)
+            palabras.delete(null);
         }
-        contador++;
+        if(palabras.has("") == true){
+            acabar = true;
+            palabras.delete("");
+        }
     }
     
-    var repetidas = palabras.map(palabras)
 
-
-    document.write(repetidas);
+    console.log(palabras);
 
 }
 window.onload = ComprobarRepetidos();
