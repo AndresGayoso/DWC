@@ -1,34 +1,40 @@
 function ComprobarRepetidos(){
     
     var acabar = false;
-    const palabras = new Map();
+    var mapa = new Map();
     var palabra;
-    var valor;
-    
+    var valor = 0;
+    var palabras = [];
+    var contador = 0;
+
+
     while(!acabar){
 
         palabra = prompt("Escribe una palabra: ");
-
-        palabras.set(palabra,1);
-
-        valor = palabras.get(palabra);
-
-        if(palabras.has(palabra) == true){
-            palabras.keySet(palabra);
-        }
         
-        if(palabras.has(null) == true){
-            acabar = true;
-            palabras.delete(null);
+        if(mapa.has(palabra)){
+            mapa.set(palabra,(mapa.get(palabra) + 1));
+        }else{
+            mapa.set(palabra,valor);
+            if(palabra != null && palabra != ""){
+                palabras[contador] = palabra;
+            }
+            contador++;
         }
-        if(palabras.has("") == true){
+        if(mapa.has(null) == true){
             acabar = true;
-            palabras.delete("");
+            mapa.delete(null);
         }
-    }
-    
+        if(mapa.has("") == true){
+            acabar = true;
+            mapa.delete("");
+        }
 
-    console.log(palabras);
+    }
+
+    for(i in palabras){
+        document.write("La palabra " + palabras[i] + " se repite: " + mapa.get(palabras[i]) + " veces. <br>");
+    }
 
 }
 window.onload = ComprobarRepetidos();
