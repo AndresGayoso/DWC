@@ -18,8 +18,6 @@ function NoRecursiva(){
 
 function Recursiva(){
 
-    limite = prompt("Escribe un numero")
-
     function fib(n){
         if( n == 0){
             return 0;
@@ -27,10 +25,21 @@ function Recursiva(){
             return 1;
         }
         else{
+
             return fib(n-1)+fib(n-2);
         }
-
     }
-    document.write("El numero en la posicion " + limite + " es: " + fib(limite-1));
+
+    limite = prompt("Escribe un numero")
+    
+    if(!isNaN(limite)){
+        for(let i = 0; i < limite;i++){
+            document.write(fib(i) + ",");
+        }
+        document.write("<br>");
+        document.write("El numero en la posicion " + limite + " es: " + fib(limite-1));
+    }else{
+        document.write("Nos has escrito un numero");
+    }
 
 }
