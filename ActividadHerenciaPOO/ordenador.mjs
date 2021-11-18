@@ -1,42 +1,27 @@
-class Ordenador {
-    constructor(marca, modelo, ram, disco, pulgadas) {
+function Ordenador (marca, modelo, ram = 4, disco = 512, pulgadas = 17) {
         this.marca = marca;
         this.modelo = modelo;
         this.ram = ram;
         this.disco = disco;
         this.pulgadas = pulgadas;
-    }
-    toString(){
-        return (
-            "Marca: " + this.marca +
-            " Modelo: " + this.modelo +
-            " RAM:: " + this.ram +
-            " Disco: " + this.disco + "GB" +
-            " Pulgadas: " + this.pulgadas + " pulgadas"
+}
+Ordenador.prototype.toString = function() 
+{
+    return (
+        "Marca: " + this.marca + "\n" +
+        "Modelo: " + this.modelo + "\n" +
+        "RAM: " + this.ram + "\n" +
+        "Disco: " + this.disco + "GB" + "\n" +
+        "Pulgadas: " + this.pulgadas + " pulgadas"
         )
-    }
 }
 
-class Portatil{
-    constructor(marca, modelo, ram, disco, pulgadas, autonomia){
-        this.marca = marca;
-        this.modelo = modelo;
-        this.ram = ram;
-        this.disco = disco;
-        this.pulgadas = pulgadas;
-        this.autonomia = autonomia;
-    }
-    toString(){
-        return (
-            "Marca: " + this.marca +
-            " Modelo: " + this.modelo +
-            " RAM: " + this.ram +
-            " Disco: " + this.disco + "GB" +
-            " Pulgadas: " + this.pulgadas + " pulgadas" +
-            " Autonomia: " + this.autonomia + " horas"
-        )
+function Portatil(marca,modelo,ram = 4,disco = 256,pulgadas = 13,autonomia = 4){
+    this.__proto__ = new Ordenador(marca,modelo,ram,disco,pulgadas);
+    this.autonomia = autonomia;
+    this.toString = function () {
+        return this.__proto__.toString() + "\n" + "Autonomia: " + this.autonomia;
     }
 }
-
 
 export { Ordenador , Portatil};
