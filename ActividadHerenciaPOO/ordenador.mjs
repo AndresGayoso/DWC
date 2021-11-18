@@ -8,11 +8,11 @@ class Ordenador {
     }
     toString(){
         return (
-            "Marca : " + this.marca +
-            " Modelo : " + this.modelo +
-            " RAM: : " + this.ram +
-            " Disco : " + this.disco +
-            " Pulgadas : " + this.pulgadas
+            "Marca: " + this.marca +
+            " Modelo: " + this.modelo +
+            " RAM:: " + this.ram +
+            " Disco: " + this.disco + "GB" +
+            " Pulgadas: " + this.pulgadas + " pulgadas"
         )
     }
 }
@@ -28,12 +28,12 @@ class Portatil{
     }
     toString(){
         return (
-            "Marca : " + this.marca +
-            " Modelo : " + this.modelo +
-            " RAM: : " + this.ram +
-            " Disco : " + this.disco +
-            " Pulgadas : " + this.pulgadas +
-            " Autonomia : " + this.autonomia
+            "Marca: " + this.marca +
+            " Modelo: " + this.modelo +
+            " RAM: " + this.ram +
+            " Disco: " + this.disco + "GB" +
+            " Pulgadas: " + this.pulgadas + " pulgadas" +
+            " Autonomia: " + this.autonomia + " horas"
         )
     }
 }

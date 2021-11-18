@@ -1,9 +1,9 @@
 import { Ordenador , Portatil } from "./ordenador.mjs";
 
-var o1 = new Ordenador("HP", "EliteDisplay",8,256,23);
-var o2 = new Ordenador("Dell" , "Inspiron AIO");
+var o1 = new Ordenador("HP","EliteDisplay",8,256,23);
+var o2 = new Ordenador("Dell","Inspiron AIO",4,512,17);
 var p1 = new Portatil("Apple","Macbook Air",8,128,13,12);
-var p2 = new Portatil("Acer", "Aspire");
+var p2 = new Portatil("Acer","Aspire",4,256,13,4);
 
 console.log(o1.toString());
 /* Salida:
