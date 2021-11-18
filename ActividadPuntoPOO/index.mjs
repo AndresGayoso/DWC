@@ -13,3 +13,8 @@ r.X = 9;
 
 console.log("p: " + p.toString());
 console.log("r: " + r.toString());
+
+var s = p.suma(r);
+console.log("s: " + s.toString());
+
+console.log("Distancia entre p y q: " + p.obtenerDistancia(q));
