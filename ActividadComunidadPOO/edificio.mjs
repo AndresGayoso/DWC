@@ -26,7 +26,6 @@ Edificio.prototype.imprimirTodosPropietarios = function (){
     let Puerta;
     let Propietario;
     let resultado = "";
-    /*let puertas = this.mapaPropietariosEdificio.get().value*/
    for(let i = 0; i < this.mapaPropietariosEdificio.size; i++){
         Planta = KeyPlanta.next().value;
         KeyPuerta = this.mapaPropietariosEdificio.get(Planta).keys()
@@ -43,5 +42,36 @@ Edificio.prototype.imprimirTodosPropietarios = function (){
     return resultado;
 }
 
+Edificio.prototype.imprimirTipoVia = function (){
+    return "Tipo de via: " + this.TipoVia;
+}
+
+Edificio.prototype.imprimirNombreVia = function (){
+    return "Nombre de la via: " + this.nombreVia;
+}
+
+Edificio.prototype.imprimirNumeroEdificio = function (){
+    return "Numero del edificio: " + this.numeroEdificio;
+}
+
+Edificio.prototype.imprimirCodigoPostal = function (){
+    return "Codigo Postal (CP): " + this.codigoPostal;
+}
+
+Edificio.prototype.modificarTipoVia = function (TipoVia){
+    this.TipoVia = TipoVia;
+}
+
+Edificio.prototype.modificarNombreVia = function (nombreVia){
+    this.nombreVia = nombreVia;
+}
+
+Edificio.prototype.modificarNumeroEdificio = function (numeroEdificio){
+    this.numeroEdificio = numeroEdificio;
+}
+
+Edificio.prototype.modificarCodigoPostal = function (codigoPostal){
+    this.codigoPostal = codigoPostal;
+}
 
 export {Edificio};
