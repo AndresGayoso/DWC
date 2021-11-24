@@ -43,7 +43,7 @@ Edificio.prototype.imprimirTodosPropietarios = function (){
 }
 
 Edificio.prototype.imprimirTipoVia = function (){
-    return "Tipo de via: " + this.TipoVia;
+    return "Tipo de via: " + this.tipoVia;
 }
 
 Edificio.prototype.imprimirNombreVia = function (){
