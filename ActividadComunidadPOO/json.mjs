@@ -53,3 +53,18 @@ for(let i = 0; i < array.length;i++){
 }
 
 console.log(edificio.imprimirTodosPropietarios())
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+        for (var i = 0; i < 6; i++) {
+           color += letters[Math.floor(Math.random() * 16)];
+       }
+   return color;
+   }
+
+   function setRandomColor() {
+       document.body.style.backgroundColor = getRandomColor();
+   }
+
+   window.onload = setRandomColor();
