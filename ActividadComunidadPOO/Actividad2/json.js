@@ -1,5 +1,3 @@
-import {Edificio} from "./edificio.mjs";
-
 var edificio1 = `{
     "tipoVia":"Calle",
     "nombreVia":"García Prieto",
@@ -18,7 +16,19 @@ var edificio1 = `{
         }
     }
 }`;
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+        for (var i = 0; i < 6; i++) {
+           color += letters[Math.floor(Math.random() * 16)];
+       }
+   return color;
+   }
 
+   function setRandomColor() {
+       document.body.style.backgroundColor = getRandomColor();
+   }
+/*
 var json = JSON.parse(edificio1);
 
 var edificio = new Edificio(json.tipoVia,json.nombreVia,json.numeroEdificio,json.codigoPostal);
@@ -53,19 +63,5 @@ for(let i = 0; i < array.length;i++){
 }
 
 var x = edificio.imprimirTodosPropietarios()
-document.write(x)
-
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-        for (var i = 0; i < 6; i++) {
-           color += letters[Math.floor(Math.random() * 16)];
-       }
-   return color;
-   }
-
-   function setRandomColor() {
-       document.body.style.backgroundColor = getRandomColor();
-   }
-
-   window.onload = setRandomColor();
+console.log(x)
+*/

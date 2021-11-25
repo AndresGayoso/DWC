@@ -73,5 +73,3 @@ Edificio.prototype.modificarNumeroEdificio = function (numeroEdificio){
 Edificio.prototype.modificarCodigoPostal = function (codigoPostal){
     this.codigoPostal = codigoPostal;
 }
-
-export {Edificio};

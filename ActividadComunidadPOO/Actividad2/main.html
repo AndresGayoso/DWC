@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunitat de propietaris</title>
-    <script type="module" src="json.js"></script>
+    <script src="edificio.mjs"></script>
+    <script src="json.js"></script>
     <style>
         h1{
             text-align: center;
@@ -15,6 +16,14 @@
 <body>
     <h1>COMUNITAT DE PROPIETARIS</h1>
     <script>
+        setRandomColor();
+
+        var json = JSON.parse(edificio1);
+
+        edificio = new Edificio(json.tipoVia,json.nombreVia,json.numeroEdificio,json.codigoPostal);
+
+        console.log(edificio)
+
     </script>
 </body>
 </html>
