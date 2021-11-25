@@ -52,7 +52,8 @@ for(let i = 0; i < array.length;i++){
     }
 }
 
-console.log(edificio.imprimirTodosPropietarios())
+var x = edificio.imprimirTodosPropietarios()
+document.write(x)
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
