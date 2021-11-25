@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunitat de propietaris</title>
-    <script src="edificio.mjs"></script>
+    <script src="edificio.js"></script>
     <script src="json.js"></script>
     <style>
-        h1{
+        h1,
+        .centrada{
             text-align: center;
+        }
+        .puerta{
+            font-weight: bold;
+            margin-left: 4px;
+            margin-bottom: 5px;
+        }
+        h3{
+            font-weight: bold;
+            margin-left: 4px;
+            margin-bottom: 5px;
+            margin-top: 5px; 
+        }
+        p{
+            margin: 5px;
         }
     </style>
 </head>
+
 <body>
     <h1>COMUNITAT DE PROPIETARIS</h1>
     <script>
@@ -20,10 +37,37 @@
 
         var json = JSON.parse(edificio1);
 
-        edificio = new Edificio(json.tipoVia,json.nombreVia,json.numeroEdificio,json.codigoPostal);
+        edificio = new Edificio(json.tipoVia, json.nombreVia, json.numeroEdificio, json.codigoPostal);
 
-        console.log(edificio)
+        document.write(
+            '<h2 class="centrada">' +
+            json.tipoVia + " " +
+            json.nombreVia + ", " +
+            json.numeroEdificio + " " +
+            "C.P " + json.codigoPostal +
+            "</h2>"
+        )
 
+        var objeto = JSON.parse(edificio1);
+
+        var array = Object.entries(objeto.mapaPropietariosEdificio);
+
+        var array2;
+
+        for (let i = 0; i < array.length; i++) {
+            edificio.agregarPlanta(array[i][0])
+            array2 = Object.entries(array[i][1])
+            for (let j = 0; j < array2.length; j++) {
+                edificio.agregarPuerta(array[i][0], array2[j][0])
+                for (let z = 0; z < array2[j][1].length; z++) {
+                    edificio.agregarPropietario(array2[j][1][z], array[i][0], array2[j][0])
+                }
+            }
+        }
+
+        var x = edificio.imprimirTodosPropietarios()
+        document.write(x)
     </script>
 </body>
+
 </html>
