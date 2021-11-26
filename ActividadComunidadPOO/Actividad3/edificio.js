@@ -26,16 +26,17 @@ Edificio.prototype.imprimirTodosPropietarios = function (){
     let Puerta;
     let Propietario;
     let resultado = "";
-    for(let i = 0; i < this.mapaPropietariosEdificio.size; i++){
+    let tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+   for(let i = 0; i < this.mapaPropietariosEdificio.size; i++){
         Planta = KeyPlanta.next().value;
         KeyPuerta = this.mapaPropietariosEdificio.get(Planta).keys()
-        resultado += "Planta: " + Planta + " \n";
+        resultado += '<h2 class="puerta">Planta: ' + Planta + "<br></h2>";
         for(let x = 0; x < this.mapaPropietariosEdificio.get(Planta).size;x++){
             Puerta = KeyPuerta.next().value
-            resultado += "\t" + "Puerta: " + Puerta + " \n";
+            resultado += "<h3>" + tab + "Puerta: " + Puerta + "<br></h3>";
             for(let j = 0; j < this.mapaPropietariosEdificio.get(Planta).get(Puerta).length;j++){
                 Propietario = this.mapaPropietariosEdificio.get(Planta).get(Puerta);
-                resultado += "\t\t" + Propietario[j] + " \n";
+                resultado += "<p>"+tab+tab + Propietario[j] + "<br></p>";
             }
         }
     }

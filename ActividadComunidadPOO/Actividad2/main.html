@@ -12,7 +12,7 @@
         h1,.centrada{
             text-align: center;
         }
-        .puerta{
+        .planta{
             font-weight: bold;
             margin-left: 4px;
             margin-bottom: 5px;
@@ -61,7 +61,22 @@
             }
         }
 
-        document.write(edificio.imprimirTodosPropietarios())
+        resultado = edificio.imprimirTodosPropietarios()
+        var br = resultado.replace(/\n/g,"<br>")
+        var tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+        var imprimir = br.replace(/\t/g,tab)
+
+        var x = resultado.split(" ")
+
+        for(let i = 0; i <x.length;i++){
+            
+            if(x[i].includes("Planta:")){
+                x[i] = "<h2>" + x[i];
+                x[i+1] += "</h2>"
+            }
+        }
+
+       document.write(x)
     </script>
 </body>
 
