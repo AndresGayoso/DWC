@@ -1,3 +1,4 @@
+//Json con los datos
 var edificio1 = `{
     "tipoVia":"Calle",
     "nombreVia":"García Prieto",
@@ -17,6 +18,7 @@ var edificio1 = `{
     }
 }`;
 
+//Funcion fondo aleatorio
 function getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';

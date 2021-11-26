@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comunitat de propietaris</title>
     <script src="edificio.js"></script>
-    <script src="json.js"></script>
+    <script src="funciones.js"></script>
     <style>
         /*
         h1,
@@ -36,6 +36,9 @@
 
 <body>
     <script>
+
+        setRandomColor();
+        
         let edificio;
 
         let tipoVia;
@@ -82,21 +85,6 @@
         edificio = new Edificio(tipoVia, nombreVia, numeroEdificio, codigoPostal);
 
         console.log(edificio);
-
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-        }
-
-        function setRandomColor() {
-            document.body.style.backgroundColor = getRandomColor();
-        }
-
-        window.onload = setRandomColor();
     </script>
 </body>
 
