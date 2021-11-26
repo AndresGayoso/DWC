@@ -15,16 +15,16 @@
         .planta{
             font-weight: bold;
             margin-left: 4px;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
         }
         h3{
             font-weight: bold;
             margin-left: 4px;
-            margin-bottom: 5px;
-            margin-top: 5px; 
+            margin-bottom: 0px;
+            margin-top: 0px; 
         }
         p{
-            margin: 5px;
+            margin-top: 0px;
         }
     </style>
 </head>
@@ -66,15 +66,22 @@
         var tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
         var imprimir = br.replace(/\t/g,tab)
 
-        var x = resultado.split(" ")
+        var x = imprimir.split(" ")
 
         for(let i = 0; i <x.length;i++){
             
             if(x[i].includes("Planta:")){
-                x[i] = "<h2>" + x[i];
+                x[i] = '<h2 class="planta">' + x[i];
                 x[i+1] += "</h2>"
             }
+            if(x[i].includes("Puerta:")){
+                x[i] = "<h3>" + x[i];
+                x[i+1] += "</h3>"
+            }
+         
         }
+
+        var x = x.join(" ")
 
        document.write(x)
     </script>

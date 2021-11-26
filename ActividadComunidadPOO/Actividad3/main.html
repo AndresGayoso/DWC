@@ -9,34 +9,104 @@
     <script src="edificio.js"></script>
     <script src="json.js"></script>
     <style>
-        h1,.centrada{
+        h1,
+        .centrada {
             text-align: center;
         }
-        .puerta{
+
+        .puerta {
             font-weight: bold;
             margin-left: 4px;
             margin-bottom: 5px;
         }
-        h3{
+
+        h3 {
             font-weight: bold;
             margin-left: 4px;
             margin-bottom: 5px;
-            margin-top: 5px; 
+            margin-top: 5px;
         }
-        p{
+
+        p {
             margin: 5px;
         }
     </style>
 </head>
+
 <body>
-    <h1>COMUNITAT DE PROPIETARIS</h1>
     <script>
         setRandomColor();
 
-        
+        let edificio;
 
 
+        let tipoVia;
+        let nombreVia;
+        let numeroEdificio;
+        let codigoPostal;
+        let planta;
+        let puerta;
+        let propietario;
+        let seguir = false;
 
+
+        tipoVia = prompt("Introduzca el tipo de via(calle/pasaje/avenida/bulevar):");
+        if (tipoVia != null) {
+            alert("Dato introducido");
+        }
+
+        nombreVia = prompt("Introduzca el nombre de la via: ");
+        if (nombreVia != null) {
+            alert("Dato introducido");
+        }
+        numeroEdificio = prompt("Introduzca el numero del edificio: ");
+        if (numeroEdificio != null) {
+            alert("Dato introducido");
+        }
+        codigoPostal = prompt("Introduzca el codigo postal: ");
+        if (codigoPostal != null) {
+            alert("Dato introducido");
+        }
+        edificio = new Edificio(tipoVia, nombreVia, numeroEdificio, codigoPostal);
+        do {
+            planta = prompt("Introduzca numero de la planta: ");
+            if (planta != null) {
+                alert("Dato introducido");
+            }
+
+            do {
+
+                puerta = prompt("Introduzca la puerta: ");
+
+                if (puerta <= 0 || puerta == null) {
+                    seguir = true;
+                } else {
+                    seguir = false;
+                    alert("Dato introducido");
+                }
+
+            } while (seguir == true);
+
+            propietario = prompt("Introduzca el nombre del propietario: ");
+            if (propietario != null) {
+                alert("Dato introducido");
+            }
+
+            //Me repite el bucle si quiero seguir introduciendo datos
+            continuar = confirm("Quieres seguir introduciendo datos");
+
+            edificio.agregarPlanta(planta);
+            edificio.agregarPuerta(planta, puerta);
+            edificio.agregarPropietario(propietario, planta, puerta);
+
+        } while (continuar == true);
+
+        document.write(`<h1>[${edificio.tipoVia}&nbsp;&nbsp;${edificio.nombreVia},&nbsp;
+        ${edificio.numeroEdificio}&nbsp;&nbsp;C.P ${edificio.codigoPostal}]</h1>`);
+        /*https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace*/
+        let res = edificio.imprimirTodosPropietarios().replace();
+
+        res.replace();
     </script>
 </body>
 
