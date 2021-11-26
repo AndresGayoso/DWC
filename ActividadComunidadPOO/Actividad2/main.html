@@ -9,8 +9,7 @@
     <script src="edificio.js"></script>
     <script src="json.js"></script>
     <style>
-        h1,
-        .centrada{
+        h1,.centrada{
             text-align: center;
         }
         .puerta{
@@ -29,7 +28,6 @@
         }
     </style>
 </head>
-
 <body>
     <h1>COMUNITAT DE PROPIETARIS</h1>
     <script>
@@ -48,11 +46,12 @@
             "</h2>"
         )
 
-        var objeto = JSON.parse(edificio1);
-
-        var array = Object.entries(objeto.mapaPropietariosEdificio);
+        var array = Object.entries(json.mapaPropietariosEdificio);
 
         var array2;
+
+        console.log(array[0])
+        console.log(Object.entries(array[0][1]))
 
         for (let i = 0; i < array.length; i++) {
             edificio.agregarPlanta(array[i][0])
@@ -65,8 +64,7 @@
             }
         }
 
-        var x = edificio.imprimirTodosPropietarios()
-        document.write(x)
+        document.write(edificio.imprimirTodosPropietarios())
     </script>
 </body>
 
