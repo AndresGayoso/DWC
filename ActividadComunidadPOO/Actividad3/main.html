@@ -9,6 +9,7 @@
     <script src="edificio.js"></script>
     <script src="json.js"></script>
     <style>
+        /*
         h1,
         .centrada {
             text-align: center;
@@ -29,16 +30,13 @@
 
         p {
             margin: 5px;
-        }
+        }*/
     </style>
 </head>
 
 <body>
     <script>
-        setRandomColor();
-
         let edificio;
-
 
         let tipoVia;
         let nombreVia;
@@ -49,64 +47,56 @@
         let propietario;
         let seguir = false;
 
-
-        tipoVia = prompt("Introduzca el tipo de via(calle/pasaje/avenida/bulevar):");
-        if (tipoVia != null) {
-            alert("Dato introducido");
+        while (tipoVia == null) {
+            tipoVia = prompt("Introduce el tipo de via:");
+            if (tipoVia != null) {
+                alert("El dato se ha introducido correctamente");
+            } else if (tipoVia == null) {
+                alert("Debes introducir un dato");
+            }
         }
-
-        nombreVia = prompt("Introduzca el nombre de la via: ");
-        if (nombreVia != null) {
-            alert("Dato introducido");
+        while (nombreVia == null) {
+            nombreVia = prompt("Introduce el nombre de la via: ");
+            if (nombreVia != null) {
+                alert("El dato se ha introducido correctamente");
+            } else if (nombreVia == null) {
+                alert("Debes introducir un dato");
+            }
         }
-        numeroEdificio = prompt("Introduzca el numero del edificio: ");
-        if (numeroEdificio != null) {
-            alert("Dato introducido");
+        while (numeroEdificio == null) {
+            numeroEdificio = prompt("Introduce el numero del edificio: ");
+            if (numeroEdificio != null) {
+                alert("El dato se ha introducido correctamente");
+            } else if (numeroEdificio == null) {
+                alert("Debes introducir un dato");
+            }
         }
-        codigoPostal = prompt("Introduzca el codigo postal: ");
-        if (codigoPostal != null) {
-            alert("Dato introducido");
+        while (codigoPostal == null) {
+            codigoPostal = prompt("Introduce el codigo postal: ");
+            if (codigoPostal != null) {
+                alert("El dato se ha introducido correctamente");
+            } else if (codigoPostal == null) {
+                alert("Debes introducir un dato");
+            }
         }
         edificio = new Edificio(tipoVia, nombreVia, numeroEdificio, codigoPostal);
-        do {
-            planta = prompt("Introduzca numero de la planta: ");
-            if (planta != null) {
-                alert("Dato introducido");
+
+        console.log(edificio);
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
             }
+            return color;
+        }
 
-            do {
+        function setRandomColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
 
-                puerta = prompt("Introduzca la puerta: ");
-
-                if (puerta <= 0 || puerta == null) {
-                    seguir = true;
-                } else {
-                    seguir = false;
-                    alert("Dato introducido");
-                }
-
-            } while (seguir == true);
-
-            propietario = prompt("Introduzca el nombre del propietario: ");
-            if (propietario != null) {
-                alert("Dato introducido");
-            }
-
-            //Me repite el bucle si quiero seguir introduciendo datos
-            continuar = confirm("Quieres seguir introduciendo datos");
-
-            edificio.agregarPlanta(planta);
-            edificio.agregarPuerta(planta, puerta);
-            edificio.agregarPropietario(propietario, planta, puerta);
-
-        } while (continuar == true);
-
-        document.write(`<h1>[${edificio.tipoVia}&nbsp;&nbsp;${edificio.nombreVia},&nbsp;
-        ${edificio.numeroEdificio}&nbsp;&nbsp;C.P ${edificio.codigoPostal}]</h1>`);
-        /*https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace*/
-        let res = edificio.imprimirTodosPropietarios().replace();
-
-        res.replace();
+        window.onload = setRandomColor();
     </script>
 </body>
 

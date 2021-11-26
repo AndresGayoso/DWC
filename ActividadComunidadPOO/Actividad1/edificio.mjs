@@ -1,3 +1,4 @@
+//Constructor
 function Edificio(tipoVia, nombreVia, numeroEdificio, codigoPostal){
         this.tipoVia = tipoVia;
         this.nombreVia = nombreVia;
@@ -6,19 +7,23 @@ function Edificio(tipoVia, nombreVia, numeroEdificio, codigoPostal){
         this.mapaPropietariosEdificio = new Map();
 }
 
+//Agregar la planta al edificio en el mapa
 Edificio.prototype.agregarPlanta = function (numeroPlanta) {
     let mapaPlanta = new Map();
     this.mapaPropietariosEdificio.set(numeroPlanta,mapaPlanta);
 }
 
+//Agregar la puerta a la planta en el mapa
 Edificio.prototype.agregarPuerta = function (numeroPlanta,numeroPuerta){
     this.mapaPropietariosEdificio.get(numeroPlanta).set(numeroPuerta,[]);
 }
 
+//Agregar los propietarios a su puerta y planta en el mapa
 Edificio.prototype.agregarPropietario = function (nombrePropietario,numeroPlanta,numeroPuerta){
     this.mapaPropietariosEdificio.get(numeroPlanta).get(numeroPuerta).push(nombrePropietario);
 }
 
+//Retorna un string con todos los propietarios asignados a su puerta y planta
 Edificio.prototype.imprimirTodosPropietarios = function (){
     let KeyPlanta = this.mapaPropietariosEdificio.keys();
     let Planta;
@@ -42,36 +47,45 @@ Edificio.prototype.imprimirTodosPropietarios = function (){
     return resultado;
 }
 
+//Retorna string con el tipo de via
 Edificio.prototype.imprimirTipoVia = function (){
     return "Tipo de via: " + this.tipoVia;
 }
 
+//Retorna string con el nombre de la via
 Edificio.prototype.imprimirNombreVia = function (){
     return "Nombre de la via: " + this.nombreVia;
 }
 
+//Retorna string con el numero del edificio
 Edificio.prototype.imprimirNumeroEdificio = function (){
     return "Numero del edificio: " + this.numeroEdificio;
 }
 
+//Retorna string con el codigo postal
 Edificio.prototype.imprimirCodigoPostal = function (){
     return "Codigo Postal (CP): " + this.codigoPostal;
 }
 
+//Modificamos el tipo de via
 Edificio.prototype.modificarTipoVia = function (TipoVia){
     this.TipoVia = TipoVia;
 }
 
+//Modificamos el nombre de la via
 Edificio.prototype.modificarNombreVia = function (nombreVia){
     this.nombreVia = nombreVia;
 }
 
+//Modificamos el numero del edificio 
 Edificio.prototype.modificarNumeroEdificio = function (numeroEdificio){
     this.numeroEdificio = numeroEdificio;
 }
 
+//Modificamos el codigo postal
 Edificio.prototype.modificarCodigoPostal = function (codigoPostal){
     this.codigoPostal = codigoPostal;
 }
 
+//Exportamos el objeto con sus funciones
 export { Edificio };
