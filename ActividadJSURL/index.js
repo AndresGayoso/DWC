@@ -2,9 +2,9 @@ function Validar(){
 
     var url = prompt("Escribe la url: ");
 
-    condicion = /http:\/{0,3}([a-zA-Z0-9-.]+:?([\w]+[\W]*) | [a-zA-Z0-9-.]+ | ([\w]+[\W]*))@$/
+    condicion = /http:\/{0,3}([a-zA-Z0-9-.]+:?([\w][\W])*) | ([a-zA-Z0-9-.])+ | ([\w]+[\W]*)@$/
 
-    texto = /([\w]+[\W]*)$/
+    texto = /([a-z] | [0-9]):$/
 
     //([a-z][A-Z][0-9])*
 
