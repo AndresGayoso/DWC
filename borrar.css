@@ -1,0 +1,74 @@
+body{
+    background-color: black;
+}
+.select{
+	max-width: 150px;
+	position: relative;
+}
+.select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 15px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: black;
+	font-size: 1em;
+	color: black;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+ 
+.select select:hover{
+	background: lightgray;
+}
+ 
+/* 
+Creamos la fecha que aparece a la izquierda del select.
+Realmente este elemento es un cuadrado que sólo tienen
+dos bordes con color y que giramos con transform: rotate(-45deg);
+*/
+.select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 10px);
+	width: 10px;
+	height: 10px;
+	display: block;
+	border-left:4px solid grey;
+	border-bottom:4px solid grey;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+}
+ 
+.select:hover i{
+    margin-top: 3px;
+	border-top: 4px solid grey; 
+    border-bottom: 0px;
+}
+p{
+    color: whitesmoke;
+}
+.flex-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+img {
+    width: 180px;
+    height: 230px;
+}
+.flex-item {
+    margin: 5px;
+}
