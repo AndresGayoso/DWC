@@ -1,10 +1,20 @@
 body {
-	background-color: black;
+	background-color: #343434;
+}
+
+nav{
+	margin-top: -8px;
+	margin-left: -8px;
+	margin-right: -8px;
+	background: black;
+	height: 50px;
 }
 
 .select {
 	max-width: 150px;
 	position: relative;
+	padding-top: 4px;
+	padding-left: 5px;
 	margin-bottom: 20px;
 }
 
@@ -47,7 +57,7 @@ dos bordes con color y que giramos con transform: rotate(-45deg);
 .select i {
 	position: absolute;
 	right: 20px;
-	top: calc(50% - 10px);
+	top: calc(50% - 8px);
 	width: 10px;
 	height: 10px;
 	display: block;
@@ -68,6 +78,7 @@ p {
 }
 
 .flex-container {
+	margin-top: 10px;
 	display: flex;
 	overflow-x: visible;
 	overflow-y: hidden;
