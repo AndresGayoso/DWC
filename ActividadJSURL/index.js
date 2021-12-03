@@ -1,29 +1,21 @@
-function Validar(){
+// Obtención de la URL a comprobar
+var url = prompt('Indica la URL que quieres comprobar');
 
-    var url = prompt("Escribe la url: ");
+// Partes del patrón de la expresión regular
+patronProtocolo = `^(ftp|http|https):\\/{0,3}`;
+patronUsuarioPassword = `(([A-Za-z0-9\\-_\\.]*:.+|[A-Za-z0-9\\-_\\.]*)@+)*`;
+patronNombreMaquina = `([A-Za-z0-9\\-_]*\.[A-Za-z0-9\\-_]+(\.[A-Za-z0-9\\-_]+)*)`;
+patronPuerto = `(:[0-9]{1,5})?`
+patronRuta = `(\\/([A-Za-z\\.]+\\/?)*)?`
+patronBusqueda = `(\\?.+)?`
 
-    condicion = /^(http|https|ftp):\/{0,3}(([a-zA-Z0-9-.])+(:[\w]+[\W]*) | ([a-zA-Z0-9-.])+ | ([\w]+[\W]*))@$/
+// Patrón completo de la URL
+var patronURL = new RegExp(patronProtocolo + 
+    patronUsuarioPassword +
+    patronNombreMaquina + 
+    patronPuerto + 
+    patronRuta + 
+    patronBusqueda);
 
-    //texto = /([a-zA-Z0-9-.]+:?([\w][\W])* | ([a-zA-Z0-9-.])+ | ([\w][\W])*):$/
-
-    //([a-z][A-Z][0-9])*
-
-    //texto = /[a-zA-Z0-9-.]+:([\w][\W])*:$/
-
-    texto = /([a-zA-Z0-9-.])+(:[\w]+[\W]*):$/
-
-    if(condicion.test(url) == true){
-        document.write("t")
-    }else{
-        document.write("f")
-    }
-
-    if(texto.test(url) == true){
-        document.write("<br>t")
-    }else{
-        document.write("<br>f")
-    }
-
-
-}
-window.onload = Validar();
+// Comprobación de la URL de entrada con el patrón indicado
+document.write(patronURL.test(url));
