@@ -84,5 +84,14 @@ img{
 }
 
 .cards{
-	padding-left: 20;
+	margin: 0 auto;
+}
+#boton{
+	width: 30%;
+	margin-top: 5%;
+	font-size: small;
+}
+
+.imagen-lista img{
+	max-width: 40px;
 }
