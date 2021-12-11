@@ -5,65 +5,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas</title>
+    <title>Document</title>
     <link rel="stylesheet" href="borrar.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body class="bg-dark">
-    <nav>
-        <form action="">
-            <div class="select">
-                <select name="seleccion">
-                    <option value="todo" selected>Todo</option>
-                    <option value="categoria">Categoria</option>
-                    <option value="año">Año</option>
-                    <option value="director">Director</option>
-                    <option value="edad">Edad</option>
-                </select>
-                <i></i>
-            </div>
-        </form>
-    </nav>
-    <div class="cards row">
-        <div class="col-sm-6 col-lg-auto">
-            <div class="flex-item card">
-                <img class="card-img-top" src="https://es.web.img2.acsta.net/pictures/21/08/31/16/41/4145554.jpg">
-                <div class="card-body">
-                    <div>
-                        <h4 class="card-title">Venom</h4>
-                    </div>
-                    <div>
-                        <p class="card-text">hola esto es una prueba</p>
-                    </div>
-                    <button type="button" id="boton" class="btn btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#pelicula_1">Actores</button>
-                    <div class="modal fade" id="pelicula_1" tabindex="-1"
-                        aria-labelledby="pelicula_1" style="display: none;" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="pelicula_1">Actores</h5>
-                                </div>
-                                <div class="modal-body">
-                                    <ol class="list-group">
-                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Suriya
-                                            <div class="imagen-lista">
-                                                <img src="https://m.media-amazon.com/images/M/MV5BNGJmN2E2ZjktMzk2Ny00ZWE5LTkxMWYtZDdjODE2ZTFlNmM1XkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_UY317_CR0,0,214,317_AL_.jpg" class="img-fluid">
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-                                <div class="modal-footer"><button type="button" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">Close</button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+    <img class="portada" src="https://pics.filmaffinity.com/Venom_Habr_matanza-389439893-large.jpg" alt="">
+    <div class="titulo">
+        <h1>Venom</h1>
+    </div>
+    <div class="informacion">
+        <h3>Duracion <p>2:30 horas</p>
+        </h3>
+        <h3>Director: <p>Pepito Palotes</p>
+        </h3>
+        <h3>Estreno: <p>2021</p>
+        </h3>
+        <h3>Edad Recomendada: <p>18 años</p>
+        </h3>
+        <h3>Calificacion: <p>9,5</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Estrella_amarilla.png" alt="">
+        </h3>
+    </div>
+    <div class="actores">
+        <h2>Actores:</h2>
+        <div class="actor">
+            <h3>Pepe Mel</h3>
+            <img src="https://pics.filmaffinity.com/Venom_Habr_matanza-389439893-large.jpg" alt="">
+        </div>
+        <div class="actor">
+            <h3>Pepe Mel</h3>
+            <img src="https://pics.filmaffinity.com/Venom_Habr_matanza-389439893-large.jpg" alt="">
+        </div>
+        <div class="actor">
+            <h3>Pepe Mel</h3>
+            <img src="https://pics.filmaffinity.com/Venom_Habr_matanza-389439893-large.jpg" alt="">
         </div>
     </div>
+    <div class="trailer">
+        <iframe src="https://www.youtube-nocookie.com/embed/nZ8FXOpcXSs" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
 </body>
+
 </html>
