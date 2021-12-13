@@ -2,19 +2,15 @@ body{
 	background-color: #343434;
 	color: #FFDB58;
 }
-.portada{
-	width: 30%;
-	height: 903px;
-}
 .titulo{
+	display: inline-block;
 	position: absolute;
-	top: 0%;
+	margin-top: 0.5%;
 	left: 32%;
-	font-size: 30px;
 }
 .informacion{
+	display: inline-block;
 	position: absolute;
-	top: 15%;
 	left: 32%;
 }
 .informacion p{
@@ -22,35 +18,60 @@ body{
 	color: white;
 }
 .informacion img{
-	width: 15%;
-	max-height: 50px;
-	position: absolute;
-	top: 83%;
-	left: 58%;
-}
-.actor img{
-	width: 43%;
+	width: 30px;
+	height: 30px;
+	margin-top: -20px;
 }
 .actor h3{
 	color: white;
 }
-.actores{
+.imagenes{
+	display: inline-block;
 	position: absolute;
-	top: 66%;
 	left: 32%;
 	display: flex;
+	margin-top: -18%;
 }
-.actores h2{
-	top: -30%;
-	font-size: 30px;
+.h2{
+	top: 95%;
 	position: absolute;
 }
 .trailer{
 	position: absolute;
-	top: 5%;
+	top: 19%;
 	left: 50%;
 }
-.trailer iframe{
-	width: px;
-	height: 315px;
+.back{
+	position: absolute;
+	margin-top: 0.5%;
+	left: 60%;
 }
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	.portada {
+		width: 30%;
+		height: 47vw;
+	}
+	.titulo {
+		font-size: 1.6vw;
+	}
+	.informacion {
+		width: 16.66%;
+		margin-top: 7%;
+	}
+	.h2{
+		font-size: 1.8vw;
+		margin-top: 5%;
+	}
+	.actor img{
+		width: 50%;
+	}
+	.actor {
+		width: 30%;
+		margin-top: 3%;
+	}
+	.trailer iframe{
+		width: 45vw;
+		height: 22vw;
+	}
+  }
