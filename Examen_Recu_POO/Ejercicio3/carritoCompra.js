@@ -33,18 +33,19 @@ function CarritoCompra() {
 var carrito = new CarritoCompra();
 
 //Introducir valores
-carrito.introducirItemCarrito("salsa",4)
-carrito.introducirItemCarrito("cola",7)
+carrito.introducirItemCarrito("salsa",4);
+carrito.introducirItemCarrito("cola",7);
 
 //Localizar items
-console.log(carrito.localizarItemCarrito("sal"))//mal
-console.log(carrito.localizarItemCarrito("cola"))//bien
+console.log(carrito.localizarItemCarrito("sal"))//mal;
+console.log(carrito.localizarItemCarrito("cola"))//bien;
 
 //Borrar item parcial
-carrito.borrarItemCarrito("cola",3)
-console.log(carrito)
+carrito.borrarItemCarrito("cola",3);
+console.log(carrito);
 
 //Borrar item completo
-carrito.borrarItemCarrito("cola",4)
-console.log(carrito)
+carrito.borrarItemCarrito("cola",4);
+console.log(carrito);
+
 */

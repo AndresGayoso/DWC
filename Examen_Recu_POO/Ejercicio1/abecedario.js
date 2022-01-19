@@ -16,26 +16,27 @@ for(let i = 0; i < 20; i++){
     LetrasAleatorias[i] = mapaAbecedarioUnicode.get(arrayAbecedario[Random]); 
 }
 
-//Ordenamos las letras
-var LetrasOrdenadas = LetrasAleatorias.sort()
-
-
-// Eliminamos las letras repetidas
-const sortLetrasUnicas = new Set(LetrasAleatorias);
-let arrayLetrasUnicas = [...sortLetrasUnicas];
-
-
-//Mostrar informacion 
+//Mostrar las letras aleatorias
 document.write("<h1>20 lletres aleatories</h1>")
 for(let i = 0; i < LetrasAleatorias.length; i++){
     document.write(LetrasAleatorias[i])
 }
 
+// Eliminamos las letras repetidas
+const sortLetrasUnicas = new Set(LetrasAleatorias);
+let arrayLetrasUnicas = [...sortLetrasUnicas];
+
+//Ordenar las letras
+var LetrasOrdenadas = LetrasAleatorias;
+LetrasOrdenadas.sort()
+
+//Mostrar las letras ordenadas
 document.write("<h1>Lletres ordenades</h1>")
-for(let i = 0; i < LetrasAleatorias.length; i++){
+for(let i = 0; i < LetrasOrdenadas.length; i++){
     document.write(LetrasOrdenadas[i])
 }
 
+//Mostrar las letras no repetidas
 document.write(`<h1>${arrayLetrasUnicas.length} lletres sense repetir</h1>`)
 for(let i = 0; i < arrayLetrasUnicas.length; i++){
     document.write(arrayLetrasUnicas[i])
