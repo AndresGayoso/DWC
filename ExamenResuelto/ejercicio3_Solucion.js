@@ -111,7 +111,6 @@ for (let [numeroRegistro, datos] of registroPacientes){
     nombrePaciente = datos.split(' (')[0];
     numeroSSPaciente = datos.split('(')[1].split(')')[0];
     direccionPaciente = datos.split('(')[1].split('-> ')[1];
-
     agendaPacientes.set(contadorPacientes, new Paciente(numeroRegistroPaciente,
         nombrePaciente, numeroSSPaciente, direccionPaciente));
 }
