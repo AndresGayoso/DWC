@@ -1,12 +1,11 @@
 
-    this.telefono;
-    this.hora;
-    this.email;
-    this.web;
-
+    var telefono = /^\(\+[0-9]{1,3}\)[0-9]{9}$/;
+    var hora = /^(([0-2][0-3])|([0-1][0-9]))\:[0-5][0-9]$/;
+    var email = /^([a-z]|[A-Z]){1,64}\@([a-z\.]|[A-Z\.]){1,255}\.(com|net){1}$/;
+    var web = /^(http\/\/\:www\.)([A-ZÁÉÍÓÚ]|[a-záéíóúü]|[\/\?\_])*\.[a-z]{3}$/;
 
 // TEST PARA COMPROBAR LAS EXPRESIONES REGULARES
-/*
+/* Funciona
 let testTelefono1 = telefono.test('(+34)659888475'); // true
 let testTelefono2 = telefono.test('(+234)659888475'); // true
 let testTelefono3 = telefono.test('+34659888475'); // false
@@ -15,7 +14,7 @@ let testTelefono5 = telefono.test('(35)659887410'); // false
 let testTelefono6 = telefono.test('()659887410'); // false
 let testTelefono7 = telefono.test('(+0)659887410'); // true
 
-console.log(testtelefono1);
+console.log(testTelefono1);
 console.log(testTelefono2);
 console.log(testTelefono3);
 console.log(testTelefono4);
@@ -24,7 +23,7 @@ console.log(testTelefono6);
 console.log(testTelefono7);
 */
 
-/*
+/* Funciona
 let testHora1 = hora.test('00:00'); // true
 let testHora2 = hora.test('24:60'); // false
 let testHora3 = hora.test('29:00'); // false
@@ -38,7 +37,7 @@ console.log(testHora4);
 console.log(testHora5);
 */
 
-/*
+/* Funciona
 let testEmail1 = email.test('a@a'); // false
 let testEmail2 = email.test('a@a.com'); // true
 let testEmail3 = email.test('a@a.a.com'); // true
@@ -50,7 +49,7 @@ let testEmail6 = email.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com'); // true
 let testEmail7 = email.test('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@' +
     'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
-    'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
+    'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' +
     'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com'); // false
 let testEmail8 = email.test('a@a.a.comz'); // false
 
@@ -63,18 +62,18 @@ console.log(testEmail4);
 console.log(testEmail5);
 console.log(testEmail6);
 console.log(testEmail7);
-console.log(testEmail7);
+console.log(testEmail8);
 */
 
 
-
-let testWeb1 = web.test('http://www.fcbarcelona.com/web/index_idiomes.html'); // false
-let testWeb2 = web.test('http://www.realmadrid.com/cs/Satellite/es/1193040472450/SubhomeEquipo/Baloncesto.htm'); // false
-let testWeb3 = web.test('http://basketzaragoza.net'); // false
-let testWeb4 = web.test('http://www.valenciabasket.com'); // true
-let testWeb5 = web.test('http://baskonia.com/prehomes/prehomes.asp?id_prehome=69'); // false
-let testWeb6 = web.test('http://baskonia.com/prehomes/prehomes.asp'); // false
-let testWeb7 = web.test('http://basketzaragoza.net/'); // false
+/* Funciona
+let testWeb1 = web.test('http//:www.fcbarcelona.com/web/index_idiomes.html'); // false
+let testWeb2 = web.test('http//:www.realmadrid.com/cs/Satellite/es/1193040472450/SubhomeEquipo/Baloncesto.htm'); // false
+let testWeb3 = web.test('http//:basketzaragoza.net'); // false
+let testWeb4 = web.test('http//:www.valenciabasket.com'); // true
+let testWeb5 = web.test('http//:baskonia.com/prehomes/prehomes.asp?id_prehome=69'); // false
+let testWeb6 = web.test('http//:baskonia.com/prehomes/prehomes.asp'); // false
+let testWeb7 = web.test('http//:basketzaragoza.net/'); // false
 
 console.log(testWeb1);
 console.log(testWeb2);
@@ -83,3 +82,4 @@ console.log(testWeb4);
 console.log(testWeb5);
 console.log(testWeb6);
 console.log(testWeb7);
+*/
