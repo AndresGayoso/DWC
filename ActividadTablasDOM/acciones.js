@@ -1,6 +1,6 @@
 function crearTablaColores(tablaColores,numColores){
 
-    // Filas que solicita el usuario
+    // Valor input numColores
     let filas = document.getElementById(numColores).value
 
     // Condicional debe ser un numero entre 1 y 20
@@ -120,30 +120,112 @@ function introducirDatosTabla(tabla,datos){
 
 }
 
-function permutarfilas(tablaColores,fila1,fila2){
+function getColor(tablaColores,fila){
+
+    // Elemento tabla
+    let tabla = document.getElementById(tablaColores)
+
+    // Iniciar array vacio
+    let color = new Array
+
+    // El numero de columnas -1 ya que la ultima es solo un background color
+    let NumColumna = tabla.rows[fila].cells.length - 1;
+
+    // Bucle que rellena el array con los valores del color
+    for (let i = 0; i < NumColumna; i++){
+        color[i] = tabla.rows[fila].cells[i].innerHTML;
+    }
+    
+    // Devuelve el array
+    return color;
+}
+
+function permutarFilas(tablaColores,fila1,fila2){
+
+    // Elemento tabla
+    let tabla = document.getElementById(tablaColores)
+
+    // Valor input fila1
+    let numFila1 = document.getElementById(fila1).value
+
+    // Valor input fila2
+    let numFila2 = document.getElementById(fila2).value
+
+    // Numero de filas totales
+    let numFilas = tabla.rows.length;
+
+    /* 
+        Condicional:
+            -Deben ser numeros
+            -Numeros diferentes
+            -Debe estar creada la tabla
+    */
+    if (!isNaN(numFila1) && !isNaN(numFila2) && numFila1 != numFila2 && numFilas > 1){
+        /* 
+            Condicional:
+                -Numero1 entre 1 y maximo de filas
+                -Numero2 entre 1 y maximo de filas
+        */
+        if(numFila1 >= 1 && numFila1 < numFilas && numFila2 >= 1 && numFila2 < numFilas){
+
+            //Recoger valores de las filas
+            let color1 = getColor(tablaColores,numFila1)
+            let color2 = getColor(tablaColores,numFila2)
+
+            // Bucle para cambiar el color 1 por el color 2
+            for(let i = 0; i <= color1.length;i++){
+
+                // Si no es la ultima columna rellena las celdas con datos
+                if (i != color1.length){
+                    tabla.rows[numFila2].cells[i].innerHTML = color1[i] 
+                // Sino pone el backgroundColor  
+                }else{
+                    tabla.rows[numFila2].cells[i].style.backgroundColor =
+                    "rgb(" + color1[0] + "," + color1[1] + "," + color1[2] + ")"
+                }
+
+            }
+
+            // Bucle para cambiar el color 2 por el color 1
+            for(let i = 0; i <= color2.length;i++){
+
+                // Si no es la ultima columna rellena las celdas con datos
+                if (i != color2.length){
+                    tabla.rows[numFila1].cells[i].innerHTML = color2[i] 
+                // Sino pone el backgroundColor    
+                }else{
+                    tabla.rows[numFila1].cells[i].style.backgroundColor =
+                    "rgb(" + color2[0] + "," + color2[1] + "," + color2[2] + ")"
+                }
+
+            }
+        }
+    }
 
 }
 
 function cambiarFondo(tablaColores,filaFondo){
 
+    // Elemento tabla
     let tabla = document.getElementById(tablaColores)
 
+    // Valor input filaFondo
     let fila = document.getElementById(filaFondo).value
 
-    let NumFilas = tabla.rows.length;
+    // Numero de filas
+    let numFilas = tabla.rows.length;
 
-    if(!isNaN(fila) && fila >= 1 && fila < NumFilas && NumFilas > 1){
+    // Condicional: Debe ser un numero entre 1 y maximo de filas
+    if(!isNaN(fila) && fila >= 1 && fila < numFilas && numFilas > 1){
 
-        let NumColumna = tabla.rows[fila].cells.length - 1;
+        // Numero de columnas (-1 es pork los arrays cuentan la posicion 0 y el length no)
+        let columna = tabla.rows[fila].cells.length - 1;
 
-        let color = new Array
+        // Valor rgb de la fila
+        let estilo = tabla.rows[fila].cells[columna].style.backgroundColor;
 
-        for (let i = 0; i < NumColumna; i++){
-            color[i] = tabla.rows[fila].cells[i].innerHTML;
-        }
-
-        document.body.style.backgroundColor = 
-        "rgb(" + color[0] + "," + color[1] + "," + color[2] + ")"
+        // Ponemos el color de fondo
+        document.body.style.backgroundColor = estilo;
 
     }
 
