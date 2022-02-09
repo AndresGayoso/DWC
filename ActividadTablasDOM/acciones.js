@@ -26,6 +26,8 @@ function crearTablaColores(tablaColores,numColores){
     // Deshabilita la celda Num.Colores
     document.getElementById(numColores).setAttribute("disabled", "disabled")
 
+    vaciarInputs()
+
 }
 
 function crearTabla(numFila,NumColumna){
@@ -120,26 +122,6 @@ function introducirDatosTabla(tabla,datos){
 
 }
 
-function getColor(tablaColores,fila){
-
-    // Elemento tabla
-    let tabla = document.getElementById(tablaColores)
-
-    // Iniciar array vacio
-    let color = new Array
-
-    // El numero de columnas -1 ya que la ultima es solo un background color
-    let NumColumna = tabla.rows[fila].cells.length - 1;
-
-    // Bucle que rellena el array con los valores del color
-    for (let i = 0; i < NumColumna; i++){
-        color[i] = tabla.rows[fila].cells[i].innerHTML;
-    }
-    
-    // Devuelve el array
-    return color;
-}
-
 function permutarFilas(tablaColores,fila1,fila2){
 
     // Elemento tabla
@@ -168,39 +150,15 @@ function permutarFilas(tablaColores,fila1,fila2){
         */
         if(numFila1 >= 1 && numFila1 < numFilas && numFila2 >= 1 && numFila2 < numFilas){
 
-            //Recoger valores de las filas
-            let color1 = getColor(tablaColores,numFila1)
-            let color2 = getColor(tablaColores,numFila2)
+            let color1 = tabla.rows[numFila1].innerHTML;
+            let color2 = tabla.rows[numFila2].innerHTML;
 
-            // Bucle para cambiar el color 1 por el color 2
-            for(let i = 0; i <= color1.length;i++){
-
-                // Si no es la ultima columna rellena las celdas con datos
-                if (i != color1.length){
-                    tabla.rows[numFila2].cells[i].innerHTML = color1[i] 
-                // Sino pone el backgroundColor  
-                }else{
-                    tabla.rows[numFila2].cells[i].style.backgroundColor =
-                    "rgb(" + color1[0] + "," + color1[1] + "," + color1[2] + ")"
-                }
-
-            }
-
-            // Bucle para cambiar el color 2 por el color 1
-            for(let i = 0; i <= color2.length;i++){
-
-                // Si no es la ultima columna rellena las celdas con datos
-                if (i != color2.length){
-                    tabla.rows[numFila1].cells[i].innerHTML = color2[i] 
-                // Sino pone el backgroundColor    
-                }else{
-                    tabla.rows[numFila1].cells[i].style.backgroundColor =
-                    "rgb(" + color2[0] + "," + color2[1] + "," + color2[2] + ")"
-                }
-
-            }
+            tabla.rows[numFila1].innerHTML = color2
+            tabla.rows[numFila2].innerHTML = color1
         }
     }
+
+    vaciarInputs()
 
 }
 
@@ -229,4 +187,15 @@ function cambiarFondo(tablaColores,filaFondo){
 
     }
 
+    vaciarInputs()
+
+}
+
+function vaciarInputs(){
+    inputs=document.getElementsByTagName("INPUT")
+    for (let i=0;i<inputs.length;i++){
+        if (inputs[i].type=="text"){
+            inputs[i].value=null;
+        }
+    }
 }
