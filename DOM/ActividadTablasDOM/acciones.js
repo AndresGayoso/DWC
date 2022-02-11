@@ -139,7 +139,7 @@ function permutarFilas(tablaColores,fila1,fila2){
     /* 
         Condicional:
             -Deben ser numeros
-            -Numeros diferentes
+            -Numeros diferenteslet color2 = tabla.rows[numFila2]
             -Debe estar creada la tabla
     */
     if (!isNaN(numFila1) && !isNaN(numFila2) && numFila1 != numFila2 && numFilas > 1){
@@ -150,11 +150,26 @@ function permutarFilas(tablaColores,fila1,fila2){
         */
         if(numFila1 >= 1 && numFila1 < numFilas && numFila2 >= 1 && numFila2 < numFilas){
 
-            let color1 = tabla.rows[numFila1].innerHTML;
-            let color2 = tabla.rows[numFila2].innerHTML;
+            // Elemento tbody
+            let tbody = tabla.getElementsByTagName("tbody")[0]
 
-            tabla.rows[numFila1].innerHTML = color2
-            tabla.rows[numFila2].innerHTML = color1
+            // Fila 1
+            let color1 = tabla.rows[numFila1]
+
+            // Fila 2
+            let color2 = tabla.rows[numFila2]
+
+            // Posicion 1
+            let pos1 = tbody.childNodes[numFila1]
+
+            // Posicion 2
+            let pos2 = tbody.childNodes[numFila2]
+
+            // Insertar fila 1 en posicion 2
+            tbody.insertBefore(color1,pos2)
+
+            // Insertar fila 2 en posicion 1
+            tbody.insertBefore(color2,pos1)
         }
     }
 
