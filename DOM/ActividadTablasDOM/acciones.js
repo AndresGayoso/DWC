@@ -150,7 +150,7 @@ function permutarFilas(tablaColores,fila1,fila2){
         */
         if(numFila1 >= 1 && numFila1 < numFilas && numFila2 >= 1 && numFila2 < numFilas){
 
-            // Elemento tbody
+            // Elemento tbody es 0 si añades un thead a la primera fila sino seria 1
             let tbody = tabla.getElementsByTagName("tbody")[0]
 
             // Fila 1
