@@ -38,7 +38,7 @@ function GenerarDecimo() {
             p.appendChild(numero);
 
             div.replaceChild(p, old)
-            
+
         }
     }
 
@@ -72,8 +72,6 @@ function RealizarSorteo() {
             let p = document.createElement("p")
 
             let numero = document.createTextNode(random)
-
-            p.style.color = "blue"
 
             p.appendChild(numero);
 
