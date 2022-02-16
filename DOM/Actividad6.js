@@ -1,25 +1,45 @@
 function GenerarDecimo() {
+    if (document.getElementsByTagName("div").length < 1) {
+        for (let i = 0; i < 3; i++) {
 
-    for (let i = 0; i < 3; i++) {
+            let div = document.createElement("div")
 
-        let div = document.createElement("div")
+            let p = document.createElement("p")
 
-        let p = document.createElement("p")
+            let random = Math.floor(Math.random() * (50 - 1) + 1)
 
-        let random = Math.floor(Math.random() * (50 - 1) + 1)
+            let numero = document.createTextNode(random)
 
-        let numero = document.createTextNode(random)
+            p.style.color = "blue"
 
-        p.style.color="blue"
+            div.appendChild(p)
 
-        div.appendChild(p)
+            p.appendChild(numero);
 
-        p.appendChild(numero);
+            let br = document.getElementsByTagName("br")[0]
 
-        let br = document.getElementsByTagName("br")[0]
-        
-        document.getElementsByTagName("body")[0].insertBefore(div, br)
+            document.getElementsByTagName("body")[0].insertBefore(div, br)
+        }
+    } else {
+        for (let i = 0; i < 3; i++) {
 
+            let div = document.getElementsByTagName("div")[i]
+
+            let old = div.children[0]
+
+            let p = document.createElement("p")
+
+            let random = Math.floor(Math.random() * (50 - 1) + 1)
+
+            let numero = document.createTextNode(random)
+
+            p.style.color = "blue"
+
+            p.appendChild(numero);
+
+            div.replaceChild(p, old)
+            
+        }
     }
 
     document.getElementsByTagName("button")[1].removeAttribute("disabled")
@@ -28,26 +48,44 @@ function GenerarDecimo() {
 
 function RealizarSorteo() {
 
-    let div = document.createElement("div")
-
-    let p = document.createElement("p")
-
     let random = Math.floor(Math.random() * (50 - 1) + 1)
 
-    let numero = document.createTextNode(random)
+    if (document.getElementsByTagName("div").length < 4) {
 
-    div.appendChild(p)
+        let div = document.createElement("div")
 
-    p.appendChild(numero)
+        let p = document.createElement("p")
 
-    document.getElementsByTagName("body")[0].appendChild(div)
+        let numero = document.createTextNode(random)
+
+        div.appendChild(p)
+
+        p.appendChild(numero)
+
+        document.getElementsByTagName("body")[0].appendChild(div)
+
+    } else {
+            let div = document.getElementsByTagName("div")[3]
+
+            let old = div.children[0]
+
+            let p = document.createElement("p")
+
+            let numero = document.createTextNode(random)
+
+            p.style.color = "blue"
+
+            p.appendChild(numero);
+
+            div.replaceChild(p, old)
+    }
 
     let numeros = document.getElementsByTagName("p")
 
-    for(let i = 0; i < numeros.length - 1;i++){
-        if(random == numeros[i].innerHTML){
+    for (let i = 0; i < numeros.length - 1; i++) {
+        if (random == numeros[i].innerHTML) {
             numeros[i].style.color = "green"
-        }else{
+        } else {
             numeros[i].style.color = "red"
         }
     }
